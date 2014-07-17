@@ -33,3 +33,14 @@ optional arguments:
 """
 
 Note that src and dest may be rsync-format source and destination. Thus, they may be remote, not just local.
+
+Example Usage
+=============
+
+This is example usage with an rsync daemon. The rsync "live" share is a Plone var directory.
+
+blobsync \
+	backup_user@www.YOURSERVERHERE.org::live/blobstorage \
+	/mnt/backup/www_live/blobstoragebackups \
+	--keep=14 \
+	--rsync-options='--password-file=rsync_secret'
